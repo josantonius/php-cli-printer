@@ -25,14 +25,14 @@ class DisplayMethodTest extends TestCase
 
     protected CliPrinter $printer;
 
-    protected string $logFile = __DIR__ . '/test.log';
+    protected string $logFile = __DIR__ . DIRECTORY_SEPARATOR . 'test.log';
 
     protected function setUp(): void
     {
         $this->printer = new CliPrinter();
         $this->logger  = new Logger('foo');
 
-        $this->logger->pushHandler(new StreamHandler(__DIR__ . '/test.log'));
+        $this->logger->pushHandler(new StreamHandler(__DIR__ . DIRECTORY_SEPARATOR . 'test.log'));
 
         parent::setup();
     }
